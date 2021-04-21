@@ -1,0 +1,42 @@
+#img{
+    height: 250px;
+    width: 350px;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-bottom: 50px;
+    
+
+
+}
+h1{
+    margin-left: 20px;
+
+
+
+}
+a{
+    margin-left: 20px;
+    text-decoration: none;
+    color:blue ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Courier, monospace;
+    
+}
+h3{
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+a:hover {
+    color:red;
+  }
+
+
+img:hover{
+    
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1); 
+      
+
+}
+  

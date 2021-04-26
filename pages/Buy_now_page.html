@@ -1,8 +1,37 @@
-﻿<html>
-<head><title>    </title>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head><title>Buy now page</title>
     <link type="text/css" rel="stylesheet" href="../styles/Home_Page.css">
     
     <link rel="stylesheet" href="../styles/Buy_now_page.css">
+    
+    <script>
+      var total =0;
+      function myFunction1() {
+       checkTotal();
+      }
+     
+      function myFunction() {
+        alert("Your order is placed, Total is " + total);
+      }
+      
+        function checkTotal() {
+          //document.listForm.total.value = '';
+          var sum = 0;
+          for (i=0;i<document.listForm.choice.length;i++) {
+            if (document.listForm.choice[i].checked) {
+              sum = sum + parseInt(document.listForm.choice[i].value);
+              total = sum;
+            }
+          }
+      
+      
+        //	document.listForm.total.value = sum;
+          document.getElementById("sum").innerHTML =sum;
+      
+       
+     }
+      </script>
 </head>
 
 <body>
@@ -24,103 +53,85 @@
 
 
  <div style="margin-left: 100px;">   
-<h4>Please select product manufacture : </h4>
+      <h4>Please select product manufacture : </h4>
 
-<div style="margin-left: 20px;">
-<input type="radio" name="manufactures" >Eco-Products SL  &nbsp;<br>
-<input type="radio" name="manufactures">Ecoware Lanka &nbsp;<br>
-<input type="radio" name="manufactures">Trickledown &nbsp;<br>
-<input type="radio" name="manufactures">BacktoEarth &nbsp;<br>
-</div>
+      <div style="margin-left: 20px;">
+        <input type="radio" name="manufactures" >Eco-Products SL  &nbsp;<br>
+        <input type="radio" name="manufactures">Ecoware Lanka &nbsp;<br>
+        <input type="radio" name="manufactures">Trickledown &nbsp;<br>
+        <input type="radio" name="manufactures">BacktoEarth &nbsp;<br>
+      </div>
 
+      <h4>Quantity : </h4>
+      <div style="margin-left: 20px;">
+        <form>
+          <label for="quantity">Quantity (between 1 and 15):</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="15">
+        </form>
+      </div>
 
-
-
-
-<h4>Quantity : </h4>
-<div style="margin-left: 20px;">
-  <form>
-    <label for="quantity">Quantity (between 1 and 15):</label>
-    <input type="number" id="quantity" name="quantity" min="1" max="15">
-  </form>
-</div>
-
-<h4>Add Extras: </h4>
-<form name="listForm">
-<div style="margin-left: 20px;">
-<input type="checkbox"  name="choice" value="500" onchange="checkTotal()"/>Eco-friendly packaging - 500 LKR  &nbsp;<br>
-<input type="checkbox"  name="choice" value="1000" onchange="checkTotal()"/>Eco-friendly greeting cards - 1000 LKR  &nbsp;<br>
-<input type="checkbox"  name="choice" value="1500" onchange="checkTotal()"/>Eco-friendly decorations - 1500 LKR  &nbsp;<br>
-<br /><br />
-
-</div>
-
-
-<div style="margin-left: 0px;">   
-  <h4>select product : </h4>
-  
-  <div style="margin-left: 20px;">
-  <h5>Bags : </h5>
-  <input type="checkbox" name="choice" value="300" onchange="checkTotal()"/>Jute Bag for Women - LKR 300  &nbsp;<br>
-  <input type="checkbox" name="choice" value="750" onchange="checkTotal()"/>Palmyra Bag - LKR 750 &nbsp;<br>
-  <input type="checkbox" name="choice" value="350" onchange="checkTotal()"/>Reed Bag - LKR 350 &nbsp;<br>
-  <input type="checkbox" name="choice" value="450" onchange="checkTotal()"/>Thal Leaf Bag - LKR 450 &nbsp;<br>
-  <input type="checkbox" name="choice" value="550" onchange="checkTotal()"/>Traditional Shopping Bag - LKR 550 &nbsp;<br>
-  <input type="checkbox" name="choice" value="1000" onchange="checkTotal()"/>Watekeiya Embossed Bag - LKR 1000 &nbsp;<br>
-
+      <h4>Add Extras: </h4>
+      <form name="listForm">
+      <div style="margin-left: 20px;">
+        <input type="checkbox"  name="choice" value="500" onchange="checkTotal()"/>Eco-friendly packaging - 500 LKR  &nbsp;<br>
+        <input type="checkbox"  name="choice" value="1000" onchange="checkTotal()"/>Eco-friendly greeting cards - 1000 LKR  &nbsp;<br>
+        <input type="checkbox"  name="choice" value="1500" onchange="checkTotal()"/>Eco-friendly decorations - 1500 LKR  &nbsp;<br>
+      <br /><br />
+      </div>
  
-  </div>
+      <h4>select product : </h4>      
+      <div style="margin-left: 20px;">
+        <h5>Bags : </h5>
+        <input type="checkbox" name="choice" value="300" onchange="checkTotal()"/>Jute Bag for Women - LKR 300  &nbsp;<br>
+        <input type="checkbox" name="choice" value="750" onchange="checkTotal()"/>Palmyra Bag - LKR 750 &nbsp;<br>
+        <input type="checkbox" name="choice" value="350" onchange="checkTotal()"/>Reed Bag - LKR 350 &nbsp;<br>
+        <input type="checkbox" name="choice" value="450" onchange="checkTotal()"/>Thal Leaf Bag - LKR 450 &nbsp;<br>
+        <input type="checkbox" name="choice" value="550" onchange="checkTotal()"/>Traditional Shopping Bag - LKR 550 &nbsp;<br>
+        <input type="checkbox" name="choice" value="1000" onchange="checkTotal()"/>Watekeiya Embossed Bag - LKR 1000 &nbsp;<br>
+       </div>
 
-  <div style="margin-left: 20px;">
-    <h5>Plates : </h5>
-    <input type="checkbox" name="choice" value="300" onchange="checkTotal()"/>Areca Leaf hexagon plate - LKR 300  &nbsp;<br>
-    <input type="checkbox" name="choice" value="600" onchange="checkTotal()"/>Areca Leaf Lunch box - LKR 600 &nbsp;<br>
-    <input type="checkbox" name="choice" value="400" onchange="checkTotal()"/>Areca Leaf Oval Dish Plate - LKR 400 &nbsp;<br>
-    <input type="checkbox" name="choice" value="500" onchange="checkTotal()"/>Areca Leaf Rectangular Plate - LKR 500 &nbsp;<br>
-    <input type="checkbox" name="choice" value="750" onchange="checkTotal()"/>Areca Leaf Square Plate - LKR 750 &nbsp;<br>
-    <input type="checkbox" name="choice" value="400" onchange="checkTotal()"/>Arecanut Leaf Plate - LKR 400 &nbsp;<br>
-    
-    </div>
-    
-  
+      <div style="margin-left: 20px;">
+        <h5>Plates : </h5>
+        <input type="checkbox" name="choice" value="300" onchange="checkTotal()"/>Areca Leaf hexagon plate - LKR 300  &nbsp;<br>
+        <input type="checkbox" name="choice" value="600" onchange="checkTotal()"/>Areca Leaf Lunch box - LKR 600 &nbsp;<br>
+        <input type="checkbox" name="choice" value="400" onchange="checkTotal()"/>Areca Leaf Oval Dish Plate - LKR 400 &nbsp;<br>
+        <input type="checkbox" name="choice" value="500" onchange="checkTotal()"/>Areca Leaf Rectangular Plate - LKR 500 &nbsp;<br>
+        <input type="checkbox" name="choice" value="750" onchange="checkTotal()"/>Areca Leaf Square Plate - LKR 750 &nbsp;<br>
+        <input type="checkbox" name="choice" value="400" onchange="checkTotal()"/>Arecanut Leaf Plate - LKR 400 &nbsp;<br>       
+        </div>
+      
+      <div style="margin-left: 20px;">
+        <h5>Mugs : </h5>   
+        <input type="checkbox" name="choice" value="550" onchange="checkTotal()"/>Eco Friendly Mug - LKR 550  &nbsp;<br>
+        <input type="checkbox" name="choice" value="600" onchange="checkTotal()"/>Bamboo Coffee mug - LKR 600 &nbsp;<br>
+        <input type="checkbox" name="choice" value="800" onchange="checkTotal()"/>Eco-friendly jujube wood Beer Mug - LKR 800 &nbsp;<br>
+        <input type="checkbox" name="choice" value="550" onchange="checkTotal()"/>Pottery Coffee Mug - LKR 550 &nbsp;<br>
+        <input type="checkbox" name="choice" value="600" onchange="checkTotal()"/>Wheat Fiber Eco Friendly Mug - LKR 600 &nbsp;<br>
+        <input type="checkbox" name="choice" value="950" onchange="checkTotal()"/>Silicone Mugs - LKR 950 &nbsp;<br>
 
-
-
-    
-    <div style="margin-left: 20px;">
-      <h5>Mugs : </h5>
-    
-      <input type="checkbox" name="choice" value="550" onchange="checkTotal()"/>Eco Friendly Mug - LKR 550  &nbsp;<br>
-      <input type="checkbox" name="choice" value="600" onchange="checkTotal()"/>Bamboo Coffee mug - LKR 600 &nbsp;<br>
-      <input type="checkbox" name="choice" value="800" onchange="checkTotal()"/>Eco-friendly jujube wood Beer Mug - LKR 800 &nbsp;<br>
-      <input type="checkbox" name="choice" value="550" onchange="checkTotal()"/>Pottery Coffee Mug - LKR 550 &nbsp;<br>
-      <input type="checkbox" name="choice" value="600" onchange="checkTotal()"/>Wheat Fiber Eco Friendly Mug - LKR 600 &nbsp;<br>
-      <input type="checkbox" name="choice" value="950" onchange="checkTotal()"/>Silicone Mugs - LKR 950 &nbsp;<br>
-
-      <br>
+      <br />
       <!-- <h4>Select the size : </h4>
       <div style="margin-left: 20px;">
         <input type="radio" name="size" id="1000">Small - price change if selected this option  &nbsp;<br>
         <input type="radio" name="size" id="2500">Medium (default) - 2500 LKR  &nbsp;<br>
         <input type="radio" name="size" id="5000">Large - 5000 LKR  &nbsp; <br>
       </div> -->
-      <br>
-      <hr>
+      <br />
+      <hr />
       
-   <div>   Total:    </div><div style=" color: black; font: size 20px; font-weight: 800;"  id="sum">   </div>
-      
-</div>
+   <div>   
+     Total:    
+         <div style=" color: black; font-size: large; font-weight: 800;"  id="sum"> 
+        </div>
+  </div>
 
 </div>
 </form>
 
 <div style="margin-left: 100px;">
-
-    <button onclick="myFunction1()">Total Calculate</button>
+    <button onclick="myFunction1()">Add Order</button>
 
     <button onclick="myFunction()">Place Order</button>
- 
-    
   
 </div>
 
@@ -128,55 +139,21 @@
 
 </div>
 <footer id="footer">
-    <div class="footer">
-      <center>
-        <table border="0">
-        <td >
-          <img src="https://www.ecoproductslk.com/wp-content/themes/eco/images/eco-logo.png" width="200px" height="150px">
-          
-        </td>
-      </table>
-      </center>
-      <div style="color: #ffff;">Copyright 2021 © All Rights Reserved </div>
-    </div>
-  </footer>  
-
-  
-<script type="text/javascript">
- var total =0;
- function myFunction1() {
-  checkTotal();
- }
-
- function myFunction() {
-   window.confirm("Your order is placed, Total is " + total);
-   //alert("Your order is placed, Total is " + total);
- }
-   function checkTotal() {
-     //document.listForm.total.value = '';
-     var sum = 0;
-     var quantity= 1;
-     if(document.getElementById("quantity").value >0){
-     quantity = document.getElementById("quantity").value;
-     }
-     for (i=0;i<document.listForm.choice.length;i++) {
-       if (document.listForm.choice[i].checked) {
-         sum = sum + parseInt(document.listForm.choice[i].value);
-         total = sum * quantity;
-       }
-
-        document.getElementById("sum").innerHTML = total;
-       
-     }
- 
- 
-   //	document.listForm.total.value = sum;
+  <div class="footer">
     
- 
-  
-}
- </script>
- 
+    <table class="table3">
+    <tr>
+      <td >
+        <img src="https://www.ecoproductslk.com/wp-content/themes/eco/images/eco-logo.png" alt="footer image" style="width:200px; height:150px;">
+        
+      </td>
+    </tr>
+    </table>
+    
+    <p class="footertext" style="color: white;">Copyright 2021 © All Rights Reserved</p>
+  </div>
+</footer>  
+
 </body>
 </html>
 
